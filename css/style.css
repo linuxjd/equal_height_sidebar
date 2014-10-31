@@ -1,0 +1,93 @@
+/*
+ * 简单样式重置和页面样式
+ * */
+
+body,div,aside,section,p,h1 {
+  margin: 0;
+  padding: 0;
+}
+
+html {background-color: #F3F3F3;}
+
+body{ font: normal 14px sans-serif; }
+
+
+/*
+ * 侧边栏相关的样式
+ * */
+#page {
+  display: -webkit-flex;
+  display: flex;
+
+  /*把page居中*/
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#main {
+  /*这会让元素充满sidebar以外的区域*/
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+  background-color: #FFF;
+}
+
+aside {
+  /*给定一个默认宽度，防止变窄*/
+	-webkit-flex-shrink: 0;
+          flex-shrink: 0;
+  width: 280px;
+}
+
+/*
+ * 给内容区和侧边栏添加样式
+ * */
+#main {
+ background-color: #FFF;
+ padding: 40px 100px 40px 40px;
+ line-height: 1.5;
+ color: #565a5c;
+}
+
+#main h1 {
+  font-size: 24px;
+  margin-bottom: 28px;
+}
+
+#main p { margin-bottom: 24px; }
+
+#main .wireframe-box {
+  background-color: #e2e2e2;
+  padding: 200px 0;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+aside {
+  background-color: #292C2F;
+  padding: 20px;
+}
+
+aside .wireframe-box {
+  background-color: #37393C;
+  padding: 50px;
+  margin-top: 20px;
+}
+
+aside .double {
+  padding: 100px;
+}
+
+@media all and (max-width: 800px)  {
+  #page {
+    -webkit-flex-flow: column;
+    flex-flow: column;
+  } 
+
+  aside {
+    width: auto;
+  }
+
+  #main {
+    padding-right: 40px;
+  }
+}
